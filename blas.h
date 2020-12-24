@@ -3,7 +3,7 @@
 
 #include "blas_dense.h"
 #include "blas_sparse.h"
-#include "blas_extended.h" 
+#include "blas_extended.h"
 
 #endif
  /* BLAS_H */

@@ -7,12 +7,12 @@
     a possible variable-block or constant-block format.  Also includes
     a possible separate matrix diagonal for symmetric or triangular
     systems.  Also includes the an encoding of the Sparse BLAS
-    matrix properties, as well as an internal state indicator 
+    matrix properties, as well as an internal state indicator
     to tell if the matrix has been initalized, is being built, or
     is ready for BLAS computations.
 
 
-    Example usage:  
+    Example usage:
 
 <code>
     SPBLASI_Matrix_prop_type prop;
@@ -89,13 +89,13 @@ int SPBLASI_Matrix_double_insert_entry(SPBLASI_Matrix *A,
         if (SPBLASI_is_symmetric(SPBLASI_Matrix_prop(A)) ||
             SPBLASI_is_upper_triangular(SPBLASI_Matrix_prop(A)) ||
             SPBLASI_is_lower_triangular(SPBLASI_Matrix_prop(A)) )
-        {    
+        {
             /* initialize diagonal */
 
             int i = 0;
             int minMN = 0;
-            
-            minMN = SPBLASI_Matrix_M(A) < SPBLASI_Matrix_N(A) ? 
+
+            minMN = SPBLASI_Matrix_M(A) < SPBLASI_Matrix_N(A) ?
             SPBLASI_Matrix_M(A) : SPBLASI_Matrix_N(A)  ;
 
             SPBLASI_Matrix_diag(A) = (void *)
@@ -107,7 +107,7 @@ int SPBLASI_Matrix_double_insert_entry(SPBLASI_Matrix *A,
                 SPBLASI_Matrix_double_diag(A)[i] = 0.0;
 
 
-        }    
+        }
         SPBLASI_Matrix_state(A) = open;
     }
 #endif
@@ -128,7 +128,7 @@ int SPBLASI_Matrix_double_insert_entry(SPBLASI_Matrix *A,
             SPBLASI_Matrix_double_diag(A)[i] += val;
             return 0;
         }
-        /* 
+        /*
          * if off-diagonal, store lower triangular portion only.
         */
         else if (i < j)
@@ -152,7 +152,7 @@ int SPBLASI_Matrix_double_insert_entry(SPBLASI_Matrix *A,
             return 0;
         }
         else
-            /* 
+            /*
              * entry is not in lower-part of matrix.
             */
             return -1;
@@ -170,7 +170,7 @@ int SPBLASI_Matrix_double_insert_entry(SPBLASI_Matrix *A,
         }
         else
         {
-            /* 
+            /*
              * entry is not in upper-part of matrix.
             */
             return -1;
@@ -197,7 +197,7 @@ int SPBLASI_Matrix_double_prebuild_diag(SPBLASI_Matrix *S)
 }
 
 /*
- * build_diag() is an internal function, not used elsewhere. 
+ * build_diag() is an internal function, not used elsewhere.
  * (Not included in SPBLASI_Matrix_double.h header file.)
  *
  * At this point, we can assume that matrix is either
@@ -300,7 +300,7 @@ int SPBLASI_Matrix_double_end_construction(SPBLASI_Matrix *A)
     if (!SPBLASI_is_general(SPBLASI_Matrix_prop(A)))
     {
         /* if not general, must be symmetric or triangular and
-        *  hence, square.  
+        *  hence, square.
         */
         if (SPBLASI_Matrix_M(A) != SPBLASI_Matrix_N(A))
         {
@@ -603,8 +603,8 @@ int SPBLASI_Matrix_double_insert_row(SPBLASI_Matrix *A, int row, int nz,
         {
             Jm1[i] = J[i]-1;
         }
-        
-        ret_value =  CSR_double_insert_row(SPBLASI_Matrix_double_CSR(A), 
+
+        ret_value =  CSR_double_insert_row(SPBLASI_Matrix_double_CSR(A),
                 nz, row-1, Val, Jm1);
 
         blas_free(Jm1);

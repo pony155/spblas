@@ -6,12 +6,12 @@
     a possible variable-block or constant-block format.  Also includes
     a possible separate matrix diagonal for symmetric or triangular
     systems.  Also includes the an encoding of the Sparse BLAS
-    matrix properties, as well as an internal state indicator 
+    matrix properties, as well as an internal state indicator
     to tell if the matrix has been initalized, is being built, or
     is ready for BLAS computations.
 
 
-    Example usage:  
+    Example usage:
 
 
     SPBLASI_Matrix_prop_type prop;

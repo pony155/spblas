@@ -137,7 +137,7 @@ void SPVEC_double_trim(SPVEC_double *A)
 
 /**
 *
-*  Returns the current index of where into x it was inserted, 
+*  Returns the current index of where into x it was inserted,
 *  or -1 if an error occured.  For example, if
 *
 *  int k = SPVEC_double_insert_entry(x, 9.0, 5);

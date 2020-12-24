@@ -48,13 +48,13 @@ enum SPBLASI_property_values
     blasi_no_repeated_indices = 0,    /* this ensures that there are no    */
     blasi_repeated_indices = 1,       /* repeated indices, allowing for    */
                                       /* possible optimizations            */
-    
+
     blasi_irregular = 0,              /* In this implementation, these are */
     blasi_regular = 1,                /* largely ignored.  Could provide   */
     blasi_block_regular = 2,          /* opportunities for optimizations   */
     blasi_block_irregular = 3,        /* in future versions.               */
     blasi_block_unassembled = 4,
-    
+
     blasi_general = 0,                /* No special symmetry properties.   */
     blasi_lower_symmetric = 1,
     blasi_upper_symmetric = 2,
@@ -62,10 +62,10 @@ enum SPBLASI_property_values
     blasi_upper_triangular = 4,
     blasi_lower_hermitian = 5,
     blasi_upper_hermitian = 6,
-    
+
     blasi_real = 0,
     blasi_complex = 1,
-    
+
     blasi_single_precision = 0,
     blasi_double_precision = 1
 };

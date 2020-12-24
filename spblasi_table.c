@@ -8,7 +8,7 @@
 /*
 * This defines the global table of sparse matrices from which we
 * active during program execution.  The SPBLASI_table_size
-* is also used as an init flag. If it is 0, then no 
+* is also used as an init flag. If it is 0, then no
 * Sparse BLAS matrices are currently allocated.  That is,
 * the Sparse BLAS framework is not consuming memory.
 *
@@ -20,7 +20,7 @@
 
 static Table *SPBLASI_Table = NULL;
 
-/* 
+/*
 * This avoids the user having to call some init() function to
 * build the global tables for the Sparse BLAS matrices.
 * If no Level 2 or Level 3 primitives are needed, the matrix
@@ -142,14 +142,14 @@ void SPBLASID_Matrix_dump(SPBLASI_Matrix S, int debug_level)
     fprintf(stderr, "\n");
 
 }
-    
+
 
 
 void SPBLASI_delete_Matrix(int h)
 {
     SPBLASI_Matrix S = SPBLASI_get_Matrix(h);
 
-    if (S==NULL) 
+    if (S==NULL)
         return;
 
     if (S->state_ == unused)

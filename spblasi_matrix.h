@@ -28,10 +28,10 @@
 */
 
 
-#define SPBLASI_Matrix_state(A)            ((A)->state_) 
+#define SPBLASI_Matrix_state(A)            ((A)->state_)
 #define SPBLASI_Matrix_prop(A)             ((A)->prop_)
-#define SPBLASI_Matrix_M(A)                ((A)->M_)    
-#define SPBLASI_Matrix_N(A)                ((A)->N_)    
+#define SPBLASI_Matrix_M(A)                ((A)->M_)
+#define SPBLASI_Matrix_N(A)                ((A)->N_)
 
 #define SPBLASI_Matrix_Mb(A)               ((A)->Mb_)
 #define SPBLASI_Matrix_Nb(A)               ((A)->Nb_)

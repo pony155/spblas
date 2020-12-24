@@ -13,8 +13,8 @@
 * exits the function prematurely with a return value of "ret_val".
 * However, if the flag BLAS_ERRORS_ARE_FATAL, then it will stop execution
 * and print out a diagnostic message.
-* 
-* For example, 
+*
+* For example,
 *
 * BLAS_ASSERT_RETURN(A != NULL, NULL);
 *
@@ -23,7 +23,7 @@
 *
 * assert(A != NULL);
 *
-* otherwise, it is equivalent to 
+* otherwise, it is equivalent to
 *
 * if (A == NULL) return NULL;
 *
